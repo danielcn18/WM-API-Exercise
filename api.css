@@ -1,0 +1,54 @@
+.character-box{
+    height: auto;
+    width: 100%;
+}
+.character-box>.container{
+    height: auto;
+    width: 100%;
+    margin-top: 12vh;
+}
+.container>.title{
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.container>.searchBar{
+    height: auto;
+    width: 40%;
+    margin: 0 30%;
+    text-align: center;
+}
+.container>.button{
+    height: auto;
+    width: 8%;
+    margin: 1.5vh 46% 0 46%;
+    text-align: center;
+    color: black;   
+}
+.display-character-container{
+    height: auto;
+    width: 100%;
+    margin-top: 3vh;
+    display: flex;
+}
+.display-character-container>.display-character{
+    height: auto;
+    width: 25%;
+    margin: 0 2% 0 23%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+}
+.display-character-container>.display-information{
+    height: auto;
+    width: 25%;
+    margin: 0 23% 0 2%;
+    text-align: center;
+    border: 1px solid black;
+}
+div>.myImg{
+    height: auto;
+    width: auto;
+    object-fit: contain;
+}

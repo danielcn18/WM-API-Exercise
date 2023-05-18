@@ -1,50 +1,33 @@
+var profile = document.getElementById('character-display');
+var info = document.getElementById('character-info');
+
 document.getElementById('myButton').addEventListener('click', function(){
     var characterID = null;
-    var page = ``;
-    console.log("Hello World.");
-
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* document.getElementById('myButton').addEventListener('click', search());
-var characterId = null;
-function search(){
-    for(var i = 1; i < 827; i++){
-        let page = `https://rickandmortyapi.com/api/character/${i}`;
-        console.log(`id: ${i} page: ${page}`);
+    var count = 0;
+    var name = document.getElementById('characterName').value;
+    for(let i = 1; i < 827; i++){
+        if(characterID != null){
+            continue;
+        }
+        var page = `https://rickandmortyapi.com/api/character/${i}`;
         fetch(page)
-            .then(myPage => myPage.json())
+            .then(response => response.json())
             .then(data => {
-                console.log("id: " + data.id + ".  name: " + data.name + ".  data: " + data);
-            })
-    }
-} 
-*/
-/* document.getElementById('myButton').addEventListener('click', search);
-function search(){
-    var name = document.getElementById("characterName").value;
-    for(var i = 1; i < 827; i++){
-        let page = `https://rickandmortyapi.com/api/character/${i}`;
-        fetch(page)
-            .then(myPage => myPage.json())
-            .then(data => {
-                if(data.name == name){
-                    console.log(data.name);
+                if(name == data.name){
+                    if(count == 0){
+                        characterID = data.id;
+                        profile.style.border = "2px solid black";
+                        profile.style.backgroundImage = `url(${data.image})`;
+                        info.innerHTML = 
+                        `<p>Name: ${data.name}<br>
+                        Status: ${data.status}<br>
+                        Species: ${data.species}<br>
+                        Gender: ${data.gender}<br>
+                        Origin Name: ${data.origin.name}<br></p>`;
+                        count++;
+                    }
                 }
             })
+            .catch(error => console.warn("Error: " + error))
     }
-} */
+});
